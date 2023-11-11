@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(193deg, #ab975e 0%, #814dff 100%);
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.registro-form {
+    width: 100%;
+    max-width: 320px;
+    min-width: 272px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.registro-form input {
+    height: 25px;
+    min-width: 95%;
+    width: fit-content;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cj_portada {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+}
+
+.names, .email {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.phone, .password {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.register {
+    padding: 8px;
+    background-color: #007bff;
+    height: 35px !important;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-auths {
+    width: 100%;
+}
+
+.google-btn, .fb-btn, .apple-btn {
+    width: 48%;
+    height: 35px; 
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    background-position: 5px;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.fb-btn {
+    background-image: url('images/fb.ico');
+}
+
+.google-btn {
+    background-image: url('images/google.ico');
+}
+.apple-btn {
+    background-image: url('images/apple.ico');
+    background-size: 25px 25px !important;
+}

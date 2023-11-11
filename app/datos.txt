@@ -1,0 +1,12 @@
+Mensaje de send_text: 
+Mensaje de send_text: 
+Mensaje de send_text: 
+Mensaje: Solo un detalle más. Recuerda usar el Polyfill de fetch para asegurarte la compatibilidad con navegadores antiguos, si es que fuera necesario para tu proyecto.
+Mensaje: Establece la URL en donde se realiza la petición. La opción url es obligatoria para el método
+Mensaje: Establece una función de devolución de llamada a ejecutar si resulta algún error en la petición. Dicha función recibe como argumentos el objeto de la petición en crudo y el código de estatus de la misma petición.
+Mensaje: Establece el nombre de la función de devolución de llamada a enviar cuando se realiza una petición JSONP
+Mensaje: El método $.fn.load es el único que se puede llamar desde una selección. Dicho método obtiene el código HTML de una URL y rellena a los elementos seleccionados con la información obtenida. En conjunto con la URL, es posible especificar opcionalmente un selector, el cual obtendrá el código especificado en dicha selección.
+Mensaje: Construir los datos de envío con URLSearchParams
+Mensaje: Otra alternativa posible es usar un objeto URLSearchParams, que nos servirá exactamente igual que FormData. La única diferencia constatable es el constructor.
+Mensaje: Enviarlos lo puedes hacer del mismo modo que siempre:
+Mensaje desde send_text: u6yuhrfdgfg

@@ -93,7 +93,7 @@ function upFile() {
     document.getElementById('btnUpFile').style.display = "none";
     document.getElementById('text_msg').style.display = "block";
     document.getElementById('sendMsg-btn').style.display = "block";
-
+    showConveresation();
     console.log("Archivos enviados");
     });
 }

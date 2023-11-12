@@ -18,6 +18,7 @@ function verify_email($conexion_datebase_user, $email_user) {
 
 function go_query_db($conexion_datebase_user, $consulta) {
     if(mysqli_query($conexion_datebase_user, $consulta)) {
+        
         return true;
     } else {
         echo "error $consulta";

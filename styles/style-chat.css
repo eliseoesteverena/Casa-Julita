@@ -459,10 +459,11 @@ main {
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
+    content: '';
 }
 .sent {
 	cursor: pointer;
-	background-image: url( '../images/sent.svg' );
+	background: url( '../images/sent.svg' );
     background-size: contain;
     background-repeat: no-repeat;
     width: 30px !important;
@@ -618,13 +619,28 @@ main {
 }
 .form-files {
     align-content: center;
-    background-color: #00F;
-    padding: 15px;
-    width: 600px;
-    height: 300px;
-    border-radius: 15px;
+    background: linear-gradient( 45deg, rgba(32, 78, 207, 0.8) 12%, rgba(82, 124, 229, 0.8) 84% );
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
     bottom: 9rem;
     position: sticky;
+    content: " ";
+    display: none;
     margin: 0 auto;
 }
+
+#inputFiles {
+    display:none;
+}
+#btnUpFile {
+    display: none;
+}
+input[type="file"]::file-selector-button {
+    display: none;
+  }
+  input[type="file"]::file-selector-label {
+    font-weight: 600;
+  }
 /*End Content Section*/

@@ -9,10 +9,11 @@ function verify_email($conexion_datebase_user, $email_user) {
     $query_verify_email = mysqli_query($conexion_datebase_user, $email_in_db);
     
       if ($query_verify_email->num_rows > 0) {
-          return true; // existe
+        return true; // existe
         } else {
           return false;
         }
+    $conexion_datebase_user->close();
   }
 
 function go_query_db($conexion_datebase_user, $consulta) {
@@ -21,6 +22,7 @@ function go_query_db($conexion_datebase_user, $consulta) {
     } else {
         echo "error $consulta";
     }
+    $conexion_datebase_user->close();
 }
 
 function get_result_db($conexion_datebase_user, $consulta) {

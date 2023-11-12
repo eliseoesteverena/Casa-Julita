@@ -21,9 +21,16 @@ function reloadConversation() {
       identificadorIntervaloDeTiempo = setInterval(showConveresation, 5000);
 }
 function sendMsg() {
-  const $msgText = document.querySelector("#text_msg"),
-        $btnEnviar = document.querySelector("#sendMsg-btn"), // El botón que envía el formulario
-        $chat = document.querySelector("#chat-container"); // el div que muestra mensajes
+    if(document.querySelector("#text_msg").value.length != 0) {
+        sendText();
+    }
+    if(document.getElementById("inputFiles").length > 0) {
+        upFile();
+    }
+}
+function sendText() {
+    const $msgText = document.querySelector("#text_msg"),
+    $chat = document.querySelector("#chat-container"); // el div que muestra mensajes
 
     const msgContent = {
         msg_content: $msgText.value,
@@ -32,27 +39,38 @@ function sendMsg() {
     const msgJson = JSON.stringify(msgContent);
     //$chat.textContent = msgJson;
     // Enviarlos
-    fetch("./app/main/send_text.php", {
+        fetch("./app/main/send_text.php", {
             method: "POST", // Enviar por POST
             body: msgJson, // En el cuerpo van los datos
-        })
+        })  
         .then(respuestaCodificada => respuestaCodificada.json()) // Decodificar JSON que nos responde PHP
         .then(respuestaDecodificada => {
-            // Aquí ya tenemos la respuesta lista para ser procesada
-            //$chat.textContent = respuestaDecodificada;
             showConveresation()
         });
-        $msgText.value = "";
+    $msgText.value = "";
 }
+
+function openWindowFile() {
+    var el = document.getElementById("inputFiles");
+    if (el) {
+        el.click();
+    }
+    document.getElementById('sendMsg-btn').style.display = "none";
+    document.getElementById('text_msg').style.display = "none";
+    document.getElementById('btnUpFile').style.display = "block";
+    el.style.display = "block";
+  }
 function upFile() {
     const $inputArchivos = document.getElementById("inputFiles"),
     $btnEnviar = document.getElementById("btnUpFile"),
     $estado = document.getElementById("fileState");
+    
+    
     $btnEnviar.addEventListener("click", async () => {
     const archivosParaSubir = $inputArchivos.files;
     if (archivosParaSubir.length <= 0) {
     // Si no hay archivos, no continuamos
-    return;
+        return;
     }
     // Preparamos el formdata
     const formData = new FormData();
@@ -61,8 +79,8 @@ function upFile() {
     formData.append("archivos[]", archivo);
     }
     // Los enviamos
-    $estado.textContent = "Enviando archivos...";
-    const respuestaRaw = await fetch("./app/upload_file.php", {
+    console.log("Enviando archivos...");
+    const respuestaRaw = await fetch("./app/web/upload_file.php", {
     method: "POST",
     body: formData,
     });
@@ -71,6 +89,11 @@ function upFile() {
     console.log({ respuesta });
     // Finalmente limpiamos el campo
     $inputArchivos.value = null;
-    $estado.textContent = "Archivos enviados";
+    $inputArchivos.style.display = "none";
+    document.getElementById('btnUpFile').style.display = "none";
+    document.getElementById('text_msg').style.display = "block";
+    document.getElementById('sendMsg-btn').style.display = "block";
+
+    console.log("Archivos enviados");
     });
 }

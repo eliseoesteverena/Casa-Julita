@@ -39,20 +39,13 @@ if(isset($_SESSION['email'])){
                 <div id= "chat-container" class="chat-container">
 					
                 </div>
-				<div class="form-files">
-					<div class="form-group">
-                        <input multiple type="file" class="form-control" id="inputFiles">
-                    	<br><br>
-                    	<button id="btnUpFile" class="btn btn-success">Enviar</button>
-						<br>
-						<div class="alert alert-info" id="fileState"></div>
-                    </div>
-				</div>
                 <div class="message-box">
                     <div class="message-content">
-						<a class="click-clip" aria-hidden="true"></a>
+						<a href="javascript:openWindowFile()" id="clip" class="click-clip" aria-hidden="true"></a>
+                        <input multiple type="file" class="form-control" id="inputFiles">
 						<input id="text_msg" name="nombre" class="form-control" type="text">
     					<button id="sendMsg-btn" type="button" onclick="sendMsg()" class="sent"></button>
+    					<button id="btnUpFile" type="button" class="sent"></button>
                     </div>
                 </div>
 				

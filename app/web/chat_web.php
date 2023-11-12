@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'json_conversation.php';
+require_once '../main/json_conversation.php';
 $name_conversation = $_SESSION['name_conversation'];
 
 $consulta="SELECT

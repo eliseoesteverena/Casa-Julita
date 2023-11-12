@@ -1,7 +1,7 @@
 <?PHP
 
-require_once 'connect.php';
-require_once 'query_db.php';
+require_once 'database/connect.php';
+require_once 'database/query_db.php';
 
 /* --------- FUNCIONES --------- */
 
@@ -13,7 +13,7 @@ function register($conexion_datebase_user, $new_user_data) {
         if(create_conversation($conexion_datebase_user, $new_user_data) == true) { 
             if(register_new_conversation($conexion_datebase_user, $new_user_data) == true) {
               $conexion_datebase_user->close();
-              header("Location: ../login.php?v=user_create");
+              header("Location: ../../login.php?v=user_create");
             } else {
                 $conexion_datebase_user->close();
                 echo "<h1> Error en register_new_conversation";

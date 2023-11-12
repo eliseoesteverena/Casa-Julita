@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'query_db.php';
+include_once '../main/database/query_db.php';
 
 $conteo = count($_FILES["archivos"]["name"]);
 //$upload_dir = './archivos/';

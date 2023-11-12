@@ -19,7 +19,7 @@ if(isset($_SESSION['email'])){
 </head>
 <body>
 
-  <form class="registro-form" method="POST" action="app/login.php">
+  <form class="registro-form" method="POST" action="app/web/login.php">
         <img class="cj_portada" src="images/icono.png" alt="Icono">
         
         <div id="msg">

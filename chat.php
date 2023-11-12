@@ -34,7 +34,7 @@ if(isset($_SESSION['email'])){
                     </div>
                     <div class="icons">
                         <a class="click-file" onclick="altura()" aria-hidden="true">Archivos</a>
-                        <a class="click-logout" href="app/session_control.php?v=cerrar_sesion" aria-hidden="true">Cerrar Sesión</a>
+                        <a class="click-logout" href="app/web/session_control.php?v=cerrar_sesion" aria-hidden="true">Cerrar Sesión</a>
                     </div>
                 </div>
                 <div id= "chat-container" class="chat-container">

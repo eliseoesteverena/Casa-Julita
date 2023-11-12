@@ -1,7 +1,7 @@
 <?php
 
-require_once 'connect.php';
-require_once 'query_db.php';
+require_once '../main/database/connect.php';
+require_once '../main/database/query_db.php';
 
 
 $GLOBALS['email_user']= htmlspecialchars(strval($_POST['email']));
@@ -39,10 +39,10 @@ function login_user($conexion_datebase_user, $email_user, $password_user) {
           $_SESSION['name_conversation'] = $row["name_conversation"];
           $_SESSION['id_table_files'] = $row["id_table_files"];
         }
-        return header("Location: ../chat.php");
+        return header("Location: ../../chat.php");
     }
     else {
-        return header("Location: ../login.php?v=incorrect");
+        return header("Location: ../../login.php?v=incorrect");
     }
 
 }

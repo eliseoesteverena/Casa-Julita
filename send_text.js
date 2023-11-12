@@ -10,7 +10,7 @@ function sendMsg() {
     const msgJson = JSON.stringify(msgContent);
     //$chat.textContent = msgJson;
     // Enviarlos
-    fetch("app/send_text.php", {
+    fetch("app/main/send_text.php", {
             method: "POST", // Enviar por POST
             body: msgJson, // En el cuerpo van los datos
         })

@@ -1,7 +1,7 @@
 <?php 
 
-require_once 'connect.php';
-include_once 'register.php';
+require_once '../main/database/connect.php';
+include_once '../main/register.php';
 
 $email_user= htmlspecialchars(strval($_POST['email']));
 $name_user= htmlspecialchars(strval($_POST['name']));
@@ -28,12 +28,12 @@ if(isset($email_user) && isset($name_user) && isset($phone_user) && isset($passw
                 $new_user_data = array($email_user, $name_user, $passCifrada, $phone_user, $name_conversation);
                 register($conexion_datebase_user, $new_user_data);
 
-            } else { return header("Location: ../register.php?v=error_name"); }
-        } else { return header("Location: ../register.php?v=error_phone");  }
-    } else { return header("Location: ../register.php?v=error_email"); }
+            } else { return header("Location: ../../register.php?v=error_name"); }
+        } else { return header("Location: ../../register.php?v=error_phone");  }
+    } else { return header("Location: ../../register.php?v=error_email"); }
 
 } else {
-    return header("Location: ../register.php?v=empty_fields");
+    return header("Location: ../../register.php?v=empty_fields");
 }
   
 ?>

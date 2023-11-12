@@ -27,7 +27,7 @@ function kill_session(){
     }
     session_unset();
     // Finalmente, destruir la sesión.
-      session_destroy();
-	header("Location: ../login.php");
+    session_destroy();
+	header("Location: ../../login.php");
 }
 ?>

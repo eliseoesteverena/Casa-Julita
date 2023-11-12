@@ -10,7 +10,7 @@
 </head>
 <body>
   
-  <form method="POST" action="app/register_web.php" class="registro-form">
+  <form method="POST" action="app/web/register_web.php" class="registro-form">
         <img class="cj_portada" src="images/icono.png" alt="Icono">
         <div id="msg">
         <?php

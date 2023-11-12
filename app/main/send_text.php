@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'query_db.php';
+include_once 'database/query_db.php';
 
 
     $msg_text = json_decode(file_get_contents("php://input"));

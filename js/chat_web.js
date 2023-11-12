@@ -13,7 +13,7 @@ function showConveresation() {
       xhttp.onload = function() {
            document.getElementById("chat-container").innerHTML = this.responseText;
     }
-    xhttp.open("GET", "./app/chat_web.php");
+    xhttp.open("GET", "./app/web/chat_web.php");
     xhttp.send();
     
 }
@@ -32,7 +32,7 @@ function sendMsg() {
     const msgJson = JSON.stringify(msgContent);
     //$chat.textContent = msgJson;
     // Enviarlos
-    fetch("./app/send_text.php", {
+    fetch("./app/main/send_text.php", {
             method: "POST", // Enviar por POST
             body: msgJson, // En el cuerpo van los datos
         })

@@ -1,7 +1,7 @@
 <?php
 
-require_once 'query_db.php';
-require_once 'connect.php';
+require_once 'database/query_db.php';
+require_once 'database/connect.php';
 
 function json_conversation($conexion_datebase_user, $consulta) {
   $miArray = array();

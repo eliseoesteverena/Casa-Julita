@@ -19,7 +19,7 @@ if(isset($_SESSION['email'])){
 </head>
 <body>
 
-  <form class="registro-form" method="POST" action="app/web/login.php">
+  <form class="registro-form" method="POST" action="app/web/login_web.php">
         <img class="cj_portada" src="images/icono.png" alt="Icono">
         
         <div id="msg">
@@ -33,11 +33,17 @@ if(isset($_SESSION['email'])){
             $user_create = "<script language=\"javascript\">
             document.getElementById(\"msg\").innerHTML = \"<a>Usuario creado con Exito. ¡Inicia Sesión!</a>\";
                         </script>";
+            $error_email = "<script language=\"javascript\">
+            document.getElementById(\"msg\").innerHTML = \"<a>Email invalido, Chequeálo!</a>\";
+                        </script>";
             if(isset($_GET["v"]) && $_GET["v"] == "user_exist") {
               echo $user_exist;
             }
             if(isset($_GET["v"]) && $_GET["v"] == "incorrect") {
               echo $pass_incorect;
+            }
+            if(isset($_GET["v"]) && $_GET["v"] == "error_email") {
+              echo $error_email;
             }
             else if (isset($_GET["v"]) && $_GET["v"] == "user_create") {
               echo $user_create;

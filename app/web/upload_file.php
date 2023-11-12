@@ -3,7 +3,7 @@ session_start();
 include_once '../main/database/query_db.php';
 
 $conteo = count($_FILES["archivos"]["name"]);
-//$upload_dir = './archivos/';
+$upload_dir = '../../archivos';
 for ($i = 0; $i < $conteo; $i++) {
     $ubicacionTemporal = $_FILES["archivos"]["tmp_name"][$i];
     $nombreArchivo = $_FILES["archivos"]["name"][$i];
@@ -11,7 +11,7 @@ for ($i = 0; $i < $conteo; $i++) {
     // Renombrar archivo
     $nuevoNombre = sprintf("%s_%d.%s", uniqid(), $i, $extension);
     // Mover del temporal al directorio actual
-    move_uploaded_file($ubicacionTemporal, $nuevoNombre);
+    move_uploaded_file($ubicacionTemporal, $upload_dir . "/" . $nuevoNombre);
 }
 // Responder al cliente
 echo json_encode(true);

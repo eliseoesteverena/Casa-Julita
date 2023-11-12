@@ -26,7 +26,9 @@ if(isset($email_user) && isset($name_user) && isset($phone_user) && isset($passw
             if(strlen($name_user) > 3 && strlen($name_user) <= 25){
 
                 $new_user_data = array($email_user, $name_user, $passCifrada, $phone_user, $name_conversation);
-                register($conexion_datebase_user, $new_user_data);
+                    if(register($conexion_datebase_user, $new_user_data) == true) {
+                        header("Location: ../../login.php?v=user_create");
+                    }
 
             } else { return header("Location: ../../register.php?v=error_name"); }
         } else { return header("Location: ../../register.php?v=error_phone");  }

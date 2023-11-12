@@ -21,7 +21,7 @@ function reloadConversation() {
       identificadorIntervaloDeTiempo = setInterval(showConveresation, 5000);
 }
 function sendMsg() {
-    const $msgText = document.querySelector("#text_msg"),
+  const $msgText = document.querySelector("#text_msg"),
         $btnEnviar = document.querySelector("#sendMsg-btn"), // El botón que envía el formulario
         $chat = document.querySelector("#chat-container"); // el div que muestra mensajes
 

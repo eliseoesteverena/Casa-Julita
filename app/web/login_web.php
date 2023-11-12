@@ -9,14 +9,17 @@ $GLOBALS['password_user'] = htmlspecialchars(strval($_POST['password']));
 
 // Si los campos no están vacios continua con el proceso de registro
 if(isset($GLOBALS['email_user']) && isset($GLOBALS['password_user'])) {
-  $check_email = verify_email($conexion_datebase_user, $email_user);
-  if ($check_email != false) { // si no existe
-    login_user($conexion_datebase_user, $email_user, $password_user);
-  } else {
-    $conexion_datebase_user->close();
-    return header("Location: ../register.php?v=user_inexist");
-  }
-
+  $char_d = "@";
+  $char_e = ".";
+  if(strpos($email_user, $char_d) != false && strpos($email_user, $char_e) != false ){
+    $check_email = verify_email($conexion_datebase_user, $email_user);
+      if ($check_email != false) { // si no existe
+        login_user($conexion_datebase_user, $email_user, $password_user);
+      } else {
+              $conexion_datebase_user->close();
+              return header("Location: ../register.php?v=user_inexist");
+            }
+  } else { return header("Location: ../../login.php?v=error_email"); }
 }
 
 function login_user($conexion_datebase_user, $email_user, $password_user) {

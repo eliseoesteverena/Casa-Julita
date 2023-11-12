@@ -18,7 +18,6 @@ if(isset($_SESSION['email'])){
     <link rel="stylesheet" href="styles/style-chat.css">
     <link rel="shortcut icon" href="images/cj.ico" />
     <title>Chat - Casa Julita</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	
 </head>
